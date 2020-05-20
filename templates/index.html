@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body><br><br>
+             {% for message in get_flashed_messages() %}
+            <h4>{{ message }}</h4>
+             {% endfor %}
+
+            {% if 'email' and 'password' in session%}
+            <strong>You are logged in as: {{session['email']}}</strong><br><br>
+                 <a href="/logout"> Logout</a><br>
+                 <a href="/test"> Test page</a>
+            {%else%}
+             <br><a href="/login"> Login</a><br><br>
+            <strong>{{'Welcome. Login and solve the test'}}</strong><br><br>
+            {%endif%}
+</body>
+</html>

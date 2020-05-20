@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+    <form action="/test" method="POST">
+        <h3>{{current_question}}</h3>
+
+        {% for var in current_answer%}
+        <label for="answer">{{var}}</label>
+        <input id="answer" type="radio", name="answer" value="{{test[current_question][var]}}">
+            {%endfor%}
+
+        {% if  session['index'] !=number_of_questions:%}
+            <button type="submit" >next question</button>
+        {%else%}
+        <button type="submit" >Test finished.See result</button>
+        {%endif%}
+   </form>
+
+
+
+</body>
+</html>
